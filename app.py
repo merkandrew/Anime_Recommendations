@@ -77,7 +77,7 @@ def results():
         animes = session['animes']
     
     if animes:
-        recommended_anime = random.choice(animes)  # Choose a random anime from the list
+        recommended_anime = random.choice(animes)  
         anime_details = jikan_api.fetch_anime_details(recommended_anime['mal_id'])
         return render_template('results.html', anime=anime_details, back_url=url_for('questionnaire'))
     else:
