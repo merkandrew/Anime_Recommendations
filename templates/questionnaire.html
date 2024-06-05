@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h2>Anime Preferences</h2>
+        <form method="post">
+            <label for="genre">Preferred Genre:</label>
+            <select name="genre" id="genre">
+                {% for genre in genres %}
+                    <option value="{{ genre.mal_id }}">{{ genre.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="type">Preferred Type:</label>
+            <select name="type" id="type">
+                <option value="TV">TV</option>
+                <option value="Movie">Movie</option>
+                <option value="OVA">OVA</option>
+                <option value="Special">Special</option>
+            </select>
+            <label for="popularity">Popularity Preference:</label>
+            <select name="popularity" id="popularity">
+                <option value="popular">Popular</option>
+                <option value="niche">Niche</option>
+            </select>
+            <button type="submit">Get Recommendations</button>
+        </form>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        {% if anime %}
+            <h2>{{ anime.title }}</h2>
+            <img src="{{ anime.images.jpg.image_url }}" alt="{{ anime.title }}">
+            <p>{{ anime.synopsis }}</p>
+            <a href="{{ anime.url }}" target="_blank">More Information</a>
+        {% else %}
+            <p>No anime found for the selected criteria. Please try again.</p>
+        {% endif %}
+        <a href="{{ back_url }}">Back</a>
+    </div>
+{% endblock %}
+
+
